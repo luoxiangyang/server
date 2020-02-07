@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js中的作用域
+        //  1.全局作用域
+        //  2.局部作用域
+        //  3.块级作用域 （es6才有的）
+        //      必须有let，const声明的变量
+        //      在{}内部的 由let定义的就是块级作用域
+
+        var a = 1;
+        function f() {
+            var b = 1;
+            console.log(a);//全局作用域a 局部可以访问
+
+        }
+        console.log(b);//局部作用域 全局不能访问
+
+
+
+        //--------------------
+        {
+            var c = 1;//var 声明的
+        }
+        console.log(c);//可以访问上面大括号内var 定义的变量
+
+        {
+            let d = 1;  //由let定义的变量有块级作用域
+        }
+        console.log(d);//不可以访问上面大括号内let定义的变量
+
+
+        //-----------------------------块级作用域的嵌套
+        {
+            //调试代码时使用 加上时
+            //程序执行的时候 会停在此处。进入调试状态
+            // debugger;
+            let a = 1;
+            {
+                let a = 2;
+                console.log(a);//2
+                a = 3;
+                console.log(a);//3 这里是重新被赋值
+            }
+            console.log(a);//1
+        }
+        //--------------------------------隐藏的块级作用域
+        //  let定义的变量 
+        for (let i = 0; i < 10; i++) {
+            //i只能在{}内用
+        }
+        //console.log(i);//这里会报错 因为不是在块级作用域内
+
+    </script>
+</body>
+
+</html>
