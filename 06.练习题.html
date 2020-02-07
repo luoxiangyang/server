@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for (let i = 0; i < 11; i++) {
+
+        // }
+        // console.log(i);  
+        // const obj = { a: 1 };
+        // obj.b = 2;
+        // console.log(obj); 
+
+        // const obj = { a: 1, b: [1] };
+        // obj.b[2] = 2;
+        // console.log(obj); 
+
+        // let arr = ['zhangsan', 18, ['175cm', '65kg']];
+        // // 如何让a的值是175cm,b的值是'zhangsan
+        // // 请输入你的代码
+        // [b, , [a]] = arr
+        // console.log(a, b); // 175cm 'zhangsan'
+
+        // let { b, name: a } = { name: '王阳明' };
+        // console.log(b, a, name); //undefined '王阳明' 
+        // console.log(window);
+
+        // let response = {
+        //     data: ['a', 'b', 'c'],
+        //     meta: {
+        //         code: 200,
+        //         msg: '获取数据成功'
+        //     }
+        // };
+        // // 如何获取到 code 和 msg
+        // // 你的代码
+        // let { data: { a, b, c, d }, meta: { code, msg } } = response;
+        // console.log(code, d); // 200, 'b'
+
+        // let obj = { name: 'zs', age: 20, gender: '男' };
+        // let { age, ...a } = obj;
+        // console.log(age, a);//20 ['zs','男']
+
+        function f1({ a = 1, b = 2 } = {}) {
+            console.log(a, b, a + b);
+        }
+
+        f1({ a: 10, b: 20 })//10 20 30
+        f1({ a: 20 })//
+        f1({ c: 1 })
+        f1()
+    </script>
+</body>
+
+</html>

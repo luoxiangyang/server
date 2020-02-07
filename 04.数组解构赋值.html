@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5];
+
+        //把值从数组取出来赋值
+        //let [变量1=默认值，变量2=默认值]=[数组元素1，数组元素2]
+        let [a, b, c, d = 4] = arr;
+        let [, , e, f] = arr;//e=3 f=undefined
+        console.log(a, b, c, d, e, f);
+        //快速的从有结构的数据中取出值
+        //  如果左边的变量没有分配到值 有默认值使用默认值 没有默认值就undefined
+        let arr1 = ['190cm', ['zhangsan', '18']];
+        let [, [g, h]] = arr1;
+        console.log(g, h);//'zhangsan' ;18
+        //---------------------------------------------剩余值
+        //把对于的值收集起来 得到一个数组   
+        //  ...只能写在最后一个变量的前面
+        //  收集不到就是一个空数组
+        let [i, , j, ...k] = arr;
+        console.log(k);//k=[4,5]
+        //--------------------------------------------交换a b的值
+        [a, b] = [b, a];
+        console.log(a, b);
+
+
+
+    </script>
+</body>
+
+</html>
