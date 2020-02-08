@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //功能：把数组中的元素一项项的展开 把一个整体的数组拆开成单个元素
+        //格式："...数组"
+        var arr = [1, 2, 3]
+        console.log(arr);
+        console.log(...arr);
+        //应用1，数组的拷贝
+        var arr2 = [...arr]
+        //应用2，合并数组
+        //把一个数组的值全取出来放在另一个数组中
+        var arr3 = [1, 2, 3]; var arr4 = [4, 5];
+        var arr5 = [...arr3, 'a', ...arr4]
+        console.log(arr5, arr3);
+        //应用3，把数组转成单个的值
+        let arr6 = [1, 4, 5, 7]
+        console.log(Math.max(...arr6));//Math.max方法里面只能是单个数不能是数组
+
+        //---------------------------------Array.from()
+        //把非数组得对象转成数组
+
+        //----------------------------------------------------find方法
+        //从数组中找到符合条件得第一个元素
+        let result = [1, 24, 5, 3, 6].find(function (item, index, self) {
+            // console.log(item, index, self);
+            if (item > 3) {
+                //如果有return true 结束查找 
+                //  返回第一个满足条件得值
+                //  找不到满足得条件就返回undefined
+                return true;
+            }
+        })
+        console.log(result);
+        // ********************用箭头函数*********改写上面的代码
+        let result = [1, 24, 5, 3, 6].find(item => item > 3)
+        console.log(result);
+        //--------------findindex
+        //找满足条件元素下标 找到就返回 找不到就返回-1
+        //------------------------------includes()
+        //判断数组是否包含某个值  如果有就返回true 没有返回false
+        let ar = [1, 2, 4, 5];
+        //第一个参数表示是否包含这个值
+        //第二个参数表示从哪开始找
+        ar.inclidex(4, 3)
+    </script>
+</body>
+
+</html>

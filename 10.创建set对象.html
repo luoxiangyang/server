@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //es6新添加的一种数据结构比较像数组，但是成员不会重复
+
+        var s1 = new Set();
+        console.log(s1);
+
+        var s2 = new Set([1, 2, 3]);
+        console.log(s2);
+        console.log(s2.size);//获取set中成员个数
+        console.log(s2.add('4'));//添加set成员,不能重复value
+
+        //应用数组去重
+        //利用他的成员不会重复添加 这一特点
+        let arr1 = [1, 2, 2, 4, 4, 3];
+        let arr2 = new Set();
+        arr1.forEach(item => arr2.add(item))
+        console.log(arr2);
+        arr2 = Array.from(arr2)
+        console.log(arr2);
+        //-------------------------
+        var s1 = new Set(arr1);
+        //转化为数组
+        console.log([...s1]);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

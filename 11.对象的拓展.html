@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // -------------------------------------------Object.assign
+        // 功能对 对象进行合并
+        // Object.assign(目标对象，源对象1，源对象2)
+        var obj = { a: 1 };
+        // 1.向一个已有的对象添加新属性   会直接修改目标对象
+        Object.assign(obj, { b: 2 })
+        console.log(obj);
+
+        // 2.实现由几个对象 创建一个全新的对象
+        //      如果源对象有属性重叠 则以后面的为准
+        var obj1 = Object.assign({}, { a: 1 }, { a: 2 }, { c: 3 })
+        console.log(obj1);//{a:2,c:3}
+
+        //3.快速浅拷贝
+        var obj2 = { a: 1, b: 2, c: 3 };
+        var obj3 = Object.assign({}, obj2);
+        console.log(obj3);
+        //************************************************
+        //--------------------------------------------扩展运算符
+        // 再对象前面加...
+        var ob = { a: 1 };
+        var ob1 = { b: 2, c: 3 };
+        var ob2 = { ...ob, ...ob1 };
+        console.log(ob2);
+
+        //------------------------------对 对象的简写
+        //1.堆属性的简写
+        function f() {
+            var name = 'ab';
+            //如果一个对象的属性值 是一个变量 且变量名与属性名相同
+            // 可以简写变量名
+            // return { 'name': name }
+            return { name }
+        }
+        console.log(f());//{ 'name': 'ab' }
+
+
+        //2.对方法的简写
+        var obj = {
+            name: 'ab',
+            fn: function () {
+                console.log(this.name);
+            },
+            fn2() {//简写
+                console.log(this.name);
+            }
+        }
+        obj.fn();
+        obj.fn2();
+    </script>
+</body>
+
+</html>

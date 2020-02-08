@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.---------------------------模板字符串
+        //普通的拼接字符串 +
+        let name = 'zhang', age = 10;
+        let str = `姓名是${name}年龄是${age}`
+        console.log(str);
+
+        //2.-------------------------includes
+        //查找字符串是否在原字符串存在 找到返回true
+        console.log('abc'.includes('a'));
+        //如果后面加上数字 就表示从哪个下标开始
+        console.log('abc'.includes('a', 1));
+
+        //3.-------------------------startsWith
+        // 参数字符串是否在源字符串中开头(头部)
+        console.log('abc'.startsWith('ab'));
+        //如果后面加上数字 就表示从哪个下标开始往后的字符
+        console.log('abc'.startsWith('ab', 1));
+
+
+        //4.-------------------endWith
+        // 参数字符串是否在源字符串中结尾（尾部）
+        console.log('abc'.endsWith('bc'));
+        //如果后面加上数字 就表示从哪个下标开始往前的字符
+        console.log('abc'.endsWith('c', 2));
+
+        //5.-----------------------repeat
+        //repeat(重复多少次前面的字符)
+        console.log('nihao'.repeat(10))
+    </script>
+</body>
+
+</html>
