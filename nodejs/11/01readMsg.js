@@ -20,6 +20,7 @@ const getMsg = () => {
  * @param {*} name 用户名
  * @param {*} content 内容
  */
+//-----------------------------------------添加
 const addMsg = (name, content) => {
     //如何向。json文件添加一条数据
     //1.读出文件内容 转成数组
@@ -40,5 +41,29 @@ const addMsg = (name, content) => {
     // console.log(arr);
     return arr;
 }
-let rs = addMsg("balala", 'dada');
-console.log(rs);
+//--------------------------------------------删除
+const delMsg = id => {
+    //获取数据
+    let arr = getMsg();
+    del = (arr, id) => {
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].id === id) {
+                arr.splice(i, 1)
+            }
+        }
+        return arr
+    }
+    del(arr, id);
+    fs.writeFileSync(fliePath, JSON.stringify(arr))
+    console.log(arr);
+
+    //判断id是否跟输入的相同
+    //删除id相同的数据
+
+}
+delMsg(2);
+
+
+// let rs = addMsg("balala", 'dada');
+// console.log(rs);
